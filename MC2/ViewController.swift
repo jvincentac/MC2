@@ -12,9 +12,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let sb = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "PVC") as! pageViewController
+        sb.modalPresentationStyle = .fullScreen
+        present(sb, animated: true, completion: nil)
+    }
 }
-
