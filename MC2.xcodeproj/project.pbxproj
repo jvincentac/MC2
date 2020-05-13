@@ -87,6 +87,7 @@
 		9DA804A8246839170067AD06 /* MC2 */ = {
 			isa = PBXGroup;
 			children = (
+				EA4C8E67246BECC700666E76 /* Discover */,
 				9DA804A9246839170067AD06 /* AppDelegate.swift */,
 				9DA804AB246839170067AD06 /* SceneDelegate.swift */,
 				9DA804AD246839170067AD06 /* ViewController.swift */,
@@ -110,6 +111,13 @@
 				9D0D366624690EE900A35C9E /* pageViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		EA4C8E67246BECC700666E76 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Discover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
