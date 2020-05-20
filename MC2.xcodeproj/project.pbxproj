@@ -20,6 +20,11 @@
 		9DA804B9246839190067AD06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA804B7246839190067AD06 /* LaunchScreen.storyboard */; };
 		9DA804C1246839300067AD06 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA804C0246839300067AD06 /* Onboarding.storyboard */; };
 		9DA804C3246839550067AD06 /* onboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA804C2246839550067AD06 /* onboardingViewController.swift */; };
+		9DF080F42473FB9000F3A66E /* Completion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF080F32473FB9000F3A66E /* Completion.storyboard */; };
+		9DF080F62473FBDD00F3A66E /* completionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF080F52473FBDD00F3A66E /* completionViewController.swift */; };
+		9DF57C0E246BF8B300B4208E /* UserRegis.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF57C0D246BF8B300B4208E /* UserRegis.storyboard */; };
+		9DF57C10246BF94500B4208E /* UserRegisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF57C0F246BF94500B4208E /* UserRegisViewController.swift */; };
+		9DF57C3B246D3B9600B4208E /* FITBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF57C3A246D3B9600B4208E /* FITBViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		9DA804BA246839190067AD06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DA804C0246839300067AD06 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		9DA804C2246839550067AD06 /* onboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onboardingViewController.swift; sourceTree = "<group>"; };
+		9DF080F32473FB9000F3A66E /* Completion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Completion.storyboard; sourceTree = "<group>"; };
+		9DF080F52473FBDD00F3A66E /* completionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = completionViewController.swift; sourceTree = "<group>"; };
+		9DF57C0D246BF8B300B4208E /* UserRegis.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserRegis.storyboard; sourceTree = "<group>"; };
+		9DF57C0F246BF94500B4208E /* UserRegisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisViewController.swift; sourceTree = "<group>"; };
+		9DF57C3A246D3B9600B4208E /* FITBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FITBViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +61,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9D234E7024694C4900F255D4 /* UserRegis */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UserRegis;
-			sourceTree = "<group>";
-		};
 		9D234E7124694C6F00F255D4 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
 				9D234E7224694C8700F255D4 /* Quiz.storyboard */,
+				9DF57C3A246D3B9600B4208E /* FITBViewController.swift */,
 				9D491485246A8D4300611641 /* TrueFalseViewController.swift */,
 				9D234E74246A87C400F255D4 /* multipleChoiceViewController.swift */,
 			);
@@ -92,8 +96,9 @@
 				9DA804AB246839170067AD06 /* SceneDelegate.swift */,
 				9DA804AD246839170067AD06 /* ViewController.swift */,
 				9DA804AF246839170067AD06 /* Main.storyboard */,
+				9DF080F22473F5C900F3A66E /* Completion */,
+				9DF57C0C246BF89A00B4208E /* UserRegis */,
 				9D234E7124694C6F00F255D4 /* Quiz */,
-				9D234E7024694C4900F255D4 /* UserRegis */,
 				9DA804C4246839660067AD06 /* Onboarding */,
 				9DA804B5246839190067AD06 /* Assets.xcassets */,
 				9DA804B7246839190067AD06 /* LaunchScreen.storyboard */,
@@ -111,6 +116,24 @@
 				9D0D366624690EE900A35C9E /* pageViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		9DF080F22473F5C900F3A66E /* Completion */ = {
+			isa = PBXGroup;
+			children = (
+				9DF080F32473FB9000F3A66E /* Completion.storyboard */,
+				9DF080F52473FBDD00F3A66E /* completionViewController.swift */,
+			);
+			path = Completion;
+			sourceTree = "<group>";
+		};
+		9DF57C0C246BF89A00B4208E /* UserRegis */ = {
+			isa = PBXGroup;
+			children = (
+				9DF57C0D246BF8B300B4208E /* UserRegis.storyboard */,
+				9DF57C0F246BF94500B4208E /* UserRegisViewController.swift */,
+			);
+			path = UserRegis;
 			sourceTree = "<group>";
 		};
 		EA4C8E67246BECC700666E76 /* Discover */ = {
@@ -180,8 +203,10 @@
 			files = (
 				9DA804B9246839190067AD06 /* LaunchScreen.storyboard in Resources */,
 				9DA804B6246839190067AD06 /* Assets.xcassets in Resources */,
+				9DF080F42473FB9000F3A66E /* Completion.storyboard in Resources */,
 				9DA804B1246839170067AD06 /* Main.storyboard in Resources */,
 				9DA804C1246839300067AD06 /* Onboarding.storyboard in Resources */,
+				9DF57C0E246BF8B300B4208E /* UserRegis.storyboard in Resources */,
 				9D234E7324694C8700F255D4 /* Quiz.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,10 +220,13 @@
 			files = (
 				9DA804AE246839170067AD06 /* ViewController.swift in Sources */,
 				9D234E75246A87C400F255D4 /* multipleChoiceViewController.swift in Sources */,
+				9DF080F62473FBDD00F3A66E /* completionViewController.swift in Sources */,
 				9D491486246A8D4300611641 /* TrueFalseViewController.swift in Sources */,
 				9DA804AA246839170067AD06 /* AppDelegate.swift in Sources */,
 				9DA804B4246839170067AD06 /* MC2.xcdatamodeld in Sources */,
+				9DF57C10246BF94500B4208E /* UserRegisViewController.swift in Sources */,
 				9DA804AC246839170067AD06 /* SceneDelegate.swift in Sources */,
+				9DF57C3B246D3B9600B4208E /* FITBViewController.swift in Sources */,
 				9DA804C3246839550067AD06 /* onboardingViewController.swift in Sources */,
 				9D0D366724690EE900A35C9E /* pageViewController.swift in Sources */,
 			);
@@ -347,11 +375,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9W54VNRMY;
 				INFOPLIST_FILE = MC2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.MC2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.MC2-Final";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -365,11 +394,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9W54VNRMY;
 				INFOPLIST_FILE = MC2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.MC2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.MC2-Final";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
