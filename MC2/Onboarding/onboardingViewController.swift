@@ -17,6 +17,10 @@ class onboardingViewController: UIViewController {
         configurePage()
         configureQuestion()
         addAvatarData()
+        
+        User.deleteAll(viewContext: getViewContext())
+        UserCoreDataViewController.user.removeAll()
+        print("remove success")
     }
     
     func configurePage() {
@@ -32,6 +36,14 @@ class onboardingViewController: UIViewController {
             "avatar_5.png",
             "avatar_6.png"
         ]
+        
+        let standardAvatarImg : [String] = [
+            "avatar_1.png",
+            "avatar_2.png",
+            "avatar_3.png",
+        ]
+        
+        UserDefaults.standard.set(standardAvatarImg, forKey: "standardAvatarImg")
         UserDefaults.standard.set(avatarImg, forKey: "avatarImg")
     }
     
@@ -57,24 +69,24 @@ class onboardingViewController: UIViewController {
         ]
         
         let multipleChoice = [
-            "1" : ["What is another word that defines the word 'department'?","area","whole","office","cubicle"],
-            "2" : ["What is another word that defines the word 'pressure'?","stress","relaxation","ease","facility"],
-            "3" : ["What is another word that defines the word 'opportunity'?","convenience","closure","truth","misfortune"],
-            "4" : ["What is another word that defines the word 'experience'?","background","ignorance","neglect","heedlessness"],
-            "5" : ["The word 'cubicle' has the closest meaning to...","desk","hole","vault","box"],
-            "6" : ["What is another word that defines the word 'resigned'?","Relinquish","Apply","Endorse","Prevail"],
-            "7" : ["What is another word that defines the word 'performance'?","Achievements","Neglect","Skill","Progress"],
-            "8" : ["What is another word that defines the word 'postponed'?","Adjourn","Forfeit","Settle down","Expedite"],
-            "9" : ["What is another word that defines the word 'audience'? ","spectators","adherent","confederate","sustainer"],
-            "10" : ["What is another word that defines the word 'opinion'?","viewpoint","copious","discernment","plenteous"],
-            "11" : ["What is another word that defines the word 'heavy'?","loaded","coarse","arduos","vicious"],
-            "12" : ["What is another word that defines the word 'nerve-racking'?","daunting","soothing","tranquillising","embarrassing"],
+            "1" : ["What is another word that defines the word in Bold?","area","whole","office","cubicle","department"],
+            "2" : ["What is another word that defines the word in Bold?","stress","relaxation","ease","facility","pressure"],
+            "3" : ["What is another word that defines the word in Bold?","convenience","closure","truth","misfortune","opportunity"],
+            "4" : ["What is another word that defines the word in Bold?","background","ignorance","neglect","heedlessness","experience"],
+            "5" : ["The word in Bold? has the closest meaning to...","desk","hole","vault","box","cubicle"],
+            "6" : ["What is another word that defines the word in Bold?","Relinquish","Apply","Endorse","Prevail","resigned"],
+            "7" : ["What is another word that defines the word in Bold?","Achievements","Neglect","Skill","Progress","performance"],
+            "8" : ["What is another word that defines the word in Bold?","Adjourn","Forfeit","Settle down","Expedite","postponed"],
+            "9" : ["What is another word that defines the word in Bold?","spectators","adherent","confederate","sustainer","audience"],
+            "10" : ["What is another word that defines the word in Bold??","viewpoint","copious","discernment","plenteous","opinion"],
+            "11" : ["What is another word that defines the word 'in Bold??","loaded","coarse","arduos","vicious","heavy"],
+            "12" : ["What is another word that defines the word in Bold??","daunting","soothing","tranquillising","embarrassing","nerve-racking"],
         ]
         
         let FITB = [
             "1" : ["The mission is to help college grads pay off their student ______ speaks to me.","I’ve been in that situation, and I’d love the ______ to work with a coorporate that’s making a difference.","Finding a coorporate with a positive work ______ and values that align with my own has remained a priority throughout my job search,","and this ______ ranks at the top of the list."],
             "2" : ["As an experienced service-oriented ______ with more than a decade of working in boutique salons, I thrive on creating a welcoming environment for all clients.","My ______ training and strong interpersonal skills have helped me","become adept at developing long-term, ______ relationships that help","to build a ______ client base. Some of my clients have been with me since the beginning."],
-            "3" : ["I’m looking for an opportunity that gives me the ______ to build closer, long-term relationships with clients.","In my current role, the sales ______ is so short that I don’t spend as","much time building a ______ with my customers as I’d like.","Relationship-building is one of the reasons I chose a ______ in sales, and I look forward to working with a company where that’s a top priority.”"],
+            "3" : ["I’m looking for an opportunity that gives me the ______ to build closer, long-term relationships with clients.","In my current role, the sales ______ is so short that I don’t spend as much time ","building a ______ with my customers as I’d like.","Relationship-building is one of the reasons I chose a ______ in sales, and I look forward to working with a company where that’s a top priority.”"],
             "4" : ["In five years, I’d like to be an expert in ______ field,","able to train and mentor students and ______ designers alike. I would also like to gain specialized","experience in user experience to be a well-rounded ______ working with design ","and marketing teams on ______ projects that make a difference both in the company and the global community.”"],
             "5" : ["Our company's ______ has been decreasing in the last two months","According to the our customer's ______,","there has been ______ in doing the transaction.","So, today's meeting is about finding the ______ to overcome this problem. "],
             "6" : ["Due to COVID-19, from now on, all workers should do the body temperature check before ______ the office.","All workers are ______ to do social distancing during","this pandemic as a ______ against the spread of this novel corona virus.","If you're not feeling well, please ______ the HRD so you can take a day off. Thank you for your attention."],
@@ -102,18 +114,18 @@ class onboardingViewController: UIViewController {
         ]
         
         let trueFalse = [
-            "1" : ["Interview is a formal consultation usually to evaluate qualifications (as of a prospective student or employee)","true"],
-            "2" : ["Entry-level jobs are jobs that not require minimal professional work experience and open the door to larger, work-related opportunities.","false"],
-            "3" : ["In company, human resources describes the people who make up the workforce of an organization, industry, business sector, or economy.","true"],
-            "4" : ["Employee should know that an organizational goal can be something as simple as finding a way to shorten the amount of time it takes for a product to leave a warehouse or as elaborate as introducing a new product to the marketplace that makes all previous versions of this type of product obsolete","true"],
-            "5" : ["The point of Benchmarking is to identify internal opportunities for improvement, by evaluating a certain situation with a standard to compare.","true"],
-            "6" : ["Stakeholders are those who acquire, manipulate, interpret, and apply information in order to perform multidisciplinary, complex and unpredictable work.","false"],
-            "7" : ["A strong corporate culture  is one which is deeply embedded into the ways a business or organisation does things. With a strong culture, employees and management understand what is required of them and they will try to act in accordance with the core values.","true"],
-            "8" : ["Wage is a fixed amount of money that is paid in each pay period.","true"],
-            "9" : ["Conclusion contains the gist of the research findings and are usually stated at the end of the presentation.","true"],
-            "10" : ["In paraphrasing a sentence, you can't say 'in other words' or 'to put it more simply' because your argument should not be repeated using simpler language.","false"],
-            "11" : ["After answering a question from the audience, you can inquire them by saying, \"Does this answer your question?\" to check whether they've understood and is satisfied with your answer.","true"],
-            "12" : ["If you are not the only speaker to the pitching, you can hand over to someone else by saying, \"Now I will pass you over to my colleague\" then you can mention their name.","true"],
+            "1" : ["Interview is a formal consultation usually to evaluate qualifications (as of a prospective student or employee)","true","Interview"],
+            "2" : ["Entry-level jobs are jobs that not require minimal professional work experience and open the door to larger, work-related opportunities.","false","Entry-level"],
+            "3" : ["In company, human resources describes the people who make up the workforce of an organization, industry, business sector, or economy.","true","human resources"],
+            "4" : ["Employee should know that an organizational goal can be something as simple as finding a way to shorten the amount of time it takes for a product to leave a warehouse or as elaborate as introducing a new product to the marketplace that makes all previous versions of this type of product obsolete","true","organizational goal"],
+            "5" : ["The point of Benchmarking is to identify internal opportunities for improvement, by evaluating a certain situation with a standard to compare.","true","benchmarking"],
+            "6" : ["Stakeholders are those who acquire, manipulate, interpret, and apply information in order to perform multidisciplinary, complex and unpredictable work.","false","corporate culture"],
+            "7" : ["A strong corporate culture  is one which is deeply embedded into the ways a business or organisation does things. With a strong culture, employees and management understand what is required of them and they will try to act in accordance with the core values.","true","Stakeholders"],
+            "8" : ["Wage is a fixed amount of money that is paid in each pay period.","true","Wage"],
+            "9" : ["Conclusion contains the gist of the research findings and are usually stated at the end of the presentation.","true","Conclusion"],
+            "10" : ["In paraphrasing a sentence, you can't say 'in other words' or 'to put it more simply' because your argument should not be repeated using simpler language.","false","paraphrasing"],
+            "11" : ["After answering a question from the audience, you can inquire them by saying, \"Does this answer your question?\" to check whether they've understood and is satisfied with your answer.","true","inquire"],
+            "12" : ["If you are not the only speaker to the pitching, you can hand over to someone else by saying, \"Now I will pass you over to my colleague\" then you can mention their name.","true","hand over"],
         ]
         
         UserDefaults.standard.set(trueFalse, forKey: "trueFalse")

@@ -24,8 +24,8 @@ class FITBViewController: UIViewController {
     @IBOutlet weak var checkChatBubble: UIImageView!
     @IBOutlet weak var checkBtn: UIButton!
     
-    var story = 1
-    var stage = 1
+    var story = 0
+    var stage = 0
     var allButton : [UIButton] = []
     
     let allQuestion = UserDefaults.standard.dictionary(forKey: "FITB") as! [String : [String]]
@@ -132,6 +132,7 @@ class FITBViewController: UIViewController {
         let translation = gesture.translation(in: self.view)
         if gesture.state == .changed {
             selectedButton.transform = CGAffineTransform(translationX: translation.x, y: translation.y)
+            selectedQuestionBorder(point: selectedButton.frame.origin.y)
         }
         else if gesture.state == .ended {
             selectedQuestion(point: selectedButton.frame.origin.y)
@@ -139,6 +140,11 @@ class FITBViewController: UIViewController {
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
                 self.selectedButton.transform = .identity
             })
+            
+            question1.layer.borderWidth = 0
+            question2.layer.borderWidth = 0
+            question3.layer.borderWidth = 0
+            question4.layer.borderWidth = 0
         }
     }
     func selectedQuestion(point: CGFloat) {
@@ -167,7 +173,39 @@ class FITBViewController: UIViewController {
             checkChatBubble.isHidden = false
             checkBtn.isHidden = false
             checkBtn.isEnabled = true
-            
+        }
+    }
+    
+    func selectedQuestionBorder(point: CGFloat) {
+        if point >= question1.frame.origin.y && point <= question1.frame.origin.y + question1.frame.height{
+            question1.layer.borderWidth = 1
+            question2.layer.borderWidth = 0
+            question3.layer.borderWidth = 0
+            question4.layer.borderWidth = 0
+        }
+        else if point >= question2.frame.origin.y && point <= question2.frame.origin.y + question2.frame.height{
+            question1.layer.borderWidth = 0
+            question2.layer.borderWidth = 1
+            question3.layer.borderWidth = 0
+            question4.layer.borderWidth = 0
+        }
+        else if point >= question3.frame.origin.y && point <= question3.frame.origin.y + question3.frame.height{
+            question1.layer.borderWidth = 0
+            question2.layer.borderWidth = 0
+            question3.layer.borderWidth = 1
+            question4.layer.borderWidth = 0
+        }
+        else if point >= question4.frame.origin.y && point <= question4.frame.origin.y + question4.frame.height{
+            question1.layer.borderWidth = 0
+            question2.layer.borderWidth = 0
+            question3.layer.borderWidth = 0
+            question4.layer.borderWidth = 1
+        }
+        else {
+            question1.layer.borderWidth = 0
+            question2.layer.borderWidth = 0
+            question3.layer.borderWidth = 0
+            question4.layer.borderWidth = 0
         }
     }
 
@@ -175,6 +213,12 @@ class FITBViewController: UIViewController {
         let str = selectedLabel.text
         let new = str?.replace(target: target, withString: selectedButton.title(for: .normal)!)
         selectedLabel.text = new
+    }
+    
+    func replaceCheck(target: String, label: UILabel, answer: String) {
+        let str = label.text
+        let new = str?.replace(target: target, withString: answer)
+        label.text = new
     }
     
     @IBAction func click(_ sender: UIButton) {
@@ -185,6 +229,10 @@ class FITBViewController: UIViewController {
         check()
         continueBtn.isHidden = false
         continueBtn.isEnabled = true
+        
+        for button in allButton {
+            button.isUserInteractionEnabled = false
+        }
     }
     
     func changeColor(question: UILabel, target: String, color: UIColor) {
@@ -194,6 +242,7 @@ class FITBViewController: UIViewController {
         
         let attribute = NSMutableAttributedString.init(string: mainString!)
         attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: color , range: range)
+        
         
         question.attributedText = attribute
     }
@@ -206,6 +255,11 @@ class FITBViewController: UIViewController {
         else {
             changeColor(question: question1, target: targetIsQ1, color: .red)
             count -= 1
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.replaceCheck(target: self.targetIsQ1, label: self.question1, answer: self.answer[0])
+                self.targetIsQ1 = self.answer[0]
+                self.changeColor(question: self.question1, target: self.targetIsQ1, color: .green)
+            }
         }
         
         if targetIsQ2 == answer[1] {
@@ -215,6 +269,11 @@ class FITBViewController: UIViewController {
         else {
             changeColor(question: question2, target: targetIsQ2, color: .red)
             count -= 1
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.replaceCheck(target: self.targetIsQ2, label: self.question2, answer: self.answer[1])
+                self.targetIsQ2 = self.answer[1]
+                self.changeColor(question: self.question2, target: self.targetIsQ2, color: .green)
+            }
         }
         
         if targetIsQ3 == answer[2] {
@@ -224,6 +283,11 @@ class FITBViewController: UIViewController {
         else {
             changeColor(question: question3, target: targetIsQ3, color: .red)
             count -= 1
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.replaceCheck(target: self.targetIsQ3, label: self.question3, answer: self.answer[2])
+                self.targetIsQ3 = self.answer[2]
+                self.changeColor(question: self.question3, target: self.targetIsQ3, color: .green)
+            }
         }
         
         if targetIsQ4 == answer[3] {
@@ -233,8 +297,14 @@ class FITBViewController: UIViewController {
         else {
             changeColor(question: question4, target: targetIsQ4, color: .red)
             count -= 1
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.replaceCheck(target: self.targetIsQ4, label: self.question4, answer: self.answer[3])
+                self.targetIsQ4 = self.answer[3]
+                self.changeColor(question: self.question4, target: self.targetIsQ4, color: .green)
+            }
         }
     }
+    
     @IBAction func `continue`(_ sender: Any) {
         
         if count == 4 {
@@ -244,6 +314,8 @@ class FITBViewController: UIViewController {
         
         let sb = UIStoryboard(name: "Quiz", bundle: nil).instantiateViewController(withIdentifier: "trueFalse") as! TrueFalseViewController
         sb.modalPresentationStyle = .fullScreen
+        sb.story = self.story
+        sb.stage = self.stage
         self.present(sb, animated: true, completion: nil)
     }
 }

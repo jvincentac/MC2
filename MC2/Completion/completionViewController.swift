@@ -14,7 +14,6 @@ class completionViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var smallStarRight: UIImageView!
     @IBOutlet weak var smallStarLeft: UIImageView!
-    @IBOutlet weak var leftThumbBackground: UIImageView!
     @IBOutlet weak var stageLabel: UILabel!
     @IBOutlet weak var completeFailedLabel: UILabel!
     @IBOutlet weak var xpLabel: UILabel!
@@ -24,8 +23,8 @@ class completionViewController: UIViewController {
     var success = UserDefaults.standard.object(forKey: "success") as! Int
     var stage = 1
     var story = 1
-    var xp = 0
-    var coin = 0
+    var xp : Int16 = 0
+    var coin : Int16 = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +35,6 @@ class completionViewController: UIViewController {
     func configurePage() {
         contentView.layer.borderWidth = 8
         contentView.layer.cornerRadius = 15
-        leftThumbBackground.transform = leftThumbBackground.transform.rotated(by: CGFloat(Double.pi / -10))
         stageLabel.text = "Stage \(stage)"
         
         if success == 0 {
@@ -60,18 +58,27 @@ class completionViewController: UIViewController {
             smallStarRight.isHidden = true
             xpLabel.text = "+ 5 xp"
             coinLabel.text = "+ 150 coins"
+            xp = 5
+            coin = 150
         }
         else if success == 2 {
             largeStar.isHidden = true
             xpLabel.text = "+ 10 xp"
             coinLabel.text = "+ 250 coins"
+            xp = 10
+            coin = 250
         }
         else if success == 3 {
             xpLabel.text = "+ 17 xp"
             coinLabel.text = "+ 500 coins"
+            xp = 17
+            coin = 500
             repeatBtn.isHidden = true
             repeatBtn.isEnabled = false
         }
+        
+        User.updateUserExp(viewContext: getViewContext(), exp: xp)
+        User.updateUserCoin(viewContext: getViewContext(), coin: coin)
     }
     @IBAction func repeatStage(_ sender: UIButton) {
         let sb = UIStoryboard(name: "Quiz", bundle: nil).instantiateViewController(withIdentifier: "multipleChoice") as! multipleChoiceViewController

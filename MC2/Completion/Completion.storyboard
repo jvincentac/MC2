@@ -15,10 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Vector 305" translatesAutoresizingMaskIntoConstraints="NO" id="sdN-5E-xJ1">
-                                <rect key="frame" x="40" y="211" width="74" height="155"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fN5-tZ-8iP">
                                 <rect key="frame" x="62" y="303" width="291" height="291"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -69,14 +65,13 @@
                                         <state key="normal" title="Continue">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="repeatStage:" destination="fdm-Y5-emj" eventType="touchUpInside" id="aDb-A1-l5e"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Star_Background" translatesAutoresizingMaskIntoConstraints="NO" id="m0S-nE-CRE">
-                                <rect key="frame" x="178" y="138" width="194" height="182"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle_white_small" translatesAutoresizingMaskIntoConstraints="NO" id="N01-bH-hDG">
                                 <rect key="frame" x="91" y="268" width="83" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -134,7 +129,6 @@
                         <outlet property="completeFailedLabel" destination="z4U-q8-MgQ" id="E95-Q2-Zxe"/>
                         <outlet property="contentView" destination="fN5-tZ-8iP" id="zXt-fp-KrU"/>
                         <outlet property="largeStar" destination="Pd6-eS-dY5" id="y4p-61-m3a"/>
-                        <outlet property="leftThumbBackground" destination="sdN-5E-xJ1" id="fcK-dm-7cP"/>
                         <outlet property="repeatBtn" destination="YrQ-1z-bbM" id="21B-6J-Q7c"/>
                         <outlet property="smallStarLeft" destination="o5e-22-uq4" id="1FD-dD-Db4"/>
                         <outlet property="smallStarRight" destination="uQX-p9-OS4" id="Qdy-mx-8An"/>
@@ -148,8 +142,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Star_Background" width="472" height="459"/>
-        <image name="Vector 305" width="279" height="489"/>
         <image name="circle_large" width="234" height="220"/>
         <image name="circle_small" width="166" height="152"/>
         <image name="circle_white_large" width="234" height="220"/>

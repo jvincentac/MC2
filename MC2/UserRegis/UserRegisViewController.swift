@@ -29,7 +29,7 @@ class UserRegisViewController: UIViewController, UITextFieldDelegate {
         continueBtn.isHidden = true
         continueBtn.isEnabled = false
         
-        avatarImg = UserDefaults.standard.object(forKey: "avatarImg") as! [String]
+        avatarImg = UserDefaults.standard.object(forKey: "standardAvatarImg") as! [String]
         
         currAvatar.image = UIImage(named: "\(avatarImg[idx]).png")
     }
@@ -45,7 +45,7 @@ class UserRegisViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func changeRight(_ sender: Any) {
         idx += 1
-        if idx == 6 {
+        if idx == 3 {
             idx = 0
         }
         currAvatar.image = UIImage(named: "\(avatarImg[idx]).png")
@@ -53,7 +53,7 @@ class UserRegisViewController: UIViewController, UITextFieldDelegate {
     @IBAction func changeLeft(_ sender: Any) {
         idx -= 1
         if idx == -1 {
-            idx = 5
+            idx = 2
         }
         currAvatar.image = UIImage(named: "\(avatarImg[idx]).png")
     }
@@ -65,6 +65,12 @@ class UserRegisViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBAction func continueToMain(_ sender: Any) {
+        if let saveUser = User.saveUserData(viewContext: getViewContext(), userName: nameText.text ?? "", avatar: "\(avatarImg[idx]).png", exp: 0, coin: 0) {
+            UserCoreDataViewController.user.append(saveUser)
+        }
+        
+        UserDefaults.standard.set(true, forKey: "visited")
+        
         let sb = UIStoryboard(name: "Quiz", bundle: nil).instantiateViewController(withIdentifier: "multipleChoice") as! multipleChoiceViewController
         sb.modalPresentationStyle = .fullScreen
         self.present(sb, animated: true, completion: nil)

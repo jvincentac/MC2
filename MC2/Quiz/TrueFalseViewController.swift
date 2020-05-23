@@ -61,6 +61,8 @@ class TrueFalseViewController: UIViewController {
         }
         
         questionLabel.text = trueFalse[0]
+        
+        splitBoldText(target: trueFalse[2], targetLabel: questionLabel)
     }
     
     @IBAction func check(_ sender: UIButton) {
@@ -87,8 +89,8 @@ class TrueFalseViewController: UIViewController {
                 sender.setImage(UIImage(named: "True_False"), for: .normal)
             }
         }
-        trueBtn.isEnabled = false
-        falseBtn.isEnabled = false
+        trueBtn.isUserInteractionEnabled = false
+        falseBtn.isUserInteractionEnabled = false
         
         UserDefaults.standard.set(success, forKey: "success")
         

@@ -26,9 +26,10 @@ class multipleChoiceViewController: UIViewController {
     var answerButtons : [UIButton] = []
     var answers : [String] = []
     var correctAnswer = String()
+    var multipleChoice : [String] = []
     
     var story = 1
-    var stage = 1
+    var stage = 3
     var success = 0
     
     let allMultipleChoice = UserDefaults.standard.dictionary(forKey: "multipleChoice") as! [String : [String]]
@@ -81,10 +82,23 @@ class multipleChoiceViewController: UIViewController {
         conversationA.text = conversation[0]
         conversationB.text = conversation[1]
         conversationA2.text = conversation[2]
+        
+        if (conversationA.text?.contains(multipleChoice[5]))! {
+            splitBoldText(target: multipleChoice[5], targetLabel: conversationA)
+        }
+        
+        if (conversationB.text?.contains(multipleChoice[5]))! {
+            splitBoldText(target: multipleChoice[5], targetLabel: conversationB)
+        }
+        
+        if (conversationA2.text?.contains(multipleChoice[5]))! {
+            splitBoldText(target: multipleChoice[5], targetLabel: conversationA2)
+        }
+        
+        splitBoldText(target: "Bold", targetLabel: QuestionLabel)
     }
     
     func randomAnswer(story: Int, stage: Int) {
-        var multipleChoice : [String] = []
         if story == 1 {
             multipleChoice = allMultipleChoice[String(stage)]!
         }
@@ -121,7 +135,7 @@ class multipleChoiceViewController: UIViewController {
     func searchCorrectButton() {
         for answer in answerButtons {
             if answer.title(for: .normal) == correctAnswer {
-                answer.backgroundColor = .green
+                answer.backgroundColor = UIColor(red: 61/255, green: 216/255, blue: 6/255, alpha: 1)
             }
         }
     }
@@ -135,11 +149,11 @@ class multipleChoiceViewController: UIViewController {
     @IBAction func checkAnswer(_ sender: UIButton) {
         let check = sender.title(for: .normal)
         if check == correctAnswer {
-            sender.backgroundColor = .green
+            sender.backgroundColor = UIColor(red: 47/255, green: 179/255, blue: 0/255, alpha: 1)
             success += 1
         }
         else {
-            sender.backgroundColor = .red
+            sender.backgroundColor = UIColor(red: 242/255, green: 73/255, blue: 73/255, alpha: 1)
             searchCorrectButton()
         }
         disableBtn()
@@ -149,7 +163,40 @@ class multipleChoiceViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             let sb = UIStoryboard(name: "Quiz", bundle: nil).instantiateViewController(withIdentifier: "FITB") as! FITBViewController
             sb.modalPresentationStyle = .fullScreen
+            sb.story = self.story
+            sb.stage = self.stage
             self.present(sb, animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func coreDataCheck(_ sender: Any) {
+        let sb = UIStoryboard(name: "coreDataTest", bundle: nil).instantiateViewController(withIdentifier: "coreDataTest") as! UserCoreDataViewController
+        sb.modalPresentationStyle = .fullScreen
+        self.present(sb, animated: true, completion: nil)
+    }
+}
+
+extension UIViewController {
+    func splitBoldText(target: String, targetLabel: UILabel) {
+        let original = targetLabel.text
+        
+        let splitArr = original?.components(separatedBy: target)
+        
+        let boldAttribute = [
+           NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 17.0)!
+        ]
+        let regularAttribute = [
+           NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 17.0)!
+        ]
+        let boldText = NSAttributedString(string: target, attributes: boldAttribute)
+        let regularText = NSAttributedString(string: splitArr![0], attributes: regularAttribute)
+        let regularText2 = NSAttributedString(string: splitArr![1], attributes: regularAttribute)
+        let newString = NSMutableAttributedString()
+        
+        newString.append(regularText)
+        newString.append(boldText)
+        newString.append(regularText2)
+        
+        targetLabel.attributedText = newString
     }
 }
