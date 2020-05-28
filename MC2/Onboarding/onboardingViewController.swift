@@ -17,21 +17,24 @@ class onboardingViewController: UIViewController {
         configurePage()
         configureQuestion()
         addAvatarData()
+        configureStage()
         
         User.deleteAll(viewContext: getViewContext())
         UserCoreDataViewController.user.removeAll()
-        print("remove success")
     }
     
     func configurePage() {
         descView.layer.cornerRadius = 15
     }
     
+    func configureStage() {
+        UserDefaults.standard.set(0, forKey: "story1")
+        UserDefaults.standard.set(0, forKey: "story2")
+        UserDefaults.standard.set(0, forKey: "story3")
+    }
+    
     func addAvatarData() {
         let avatarImg : [String] = [
-            "avatar_1.png",
-            "avatar_2.png",
-            "avatar_3.png",
             "avatar_4.png",
             "avatar_5.png",
             "avatar_6.png"
@@ -114,7 +117,7 @@ class onboardingViewController: UIViewController {
         ]
         
         let trueFalse = [
-            "1" : ["Interview is a formal consultation usually to evaluate qualifications (as of a prospective student or employee)","true","Interview"],
+            "1" : ["Interview is a formal meeting usually to evaluate qualifications (as of a prospective student or employee)","true","Interview"],
             "2" : ["Entry-level jobs are jobs that not require minimal professional work experience and open the door to larger, work-related opportunities.","false","Entry-level"],
             "3" : ["In company, human resources describes the people who make up the workforce of an organization, industry, business sector, or economy.","true","human resources"],
             "4" : ["Employee should know that an organizational goal can be something as simple as finding a way to shorten the amount of time it takes for a product to leave a warehouse or as elaborate as introducing a new product to the marketplace that makes all previous versions of this type of product obsolete","true","organizational goal"],
@@ -133,10 +136,6 @@ class onboardingViewController: UIViewController {
         UserDefaults.standard.set(FITBAnswer, forKey: "FITBAnswer")
         UserDefaults.standard.set(multipleChoice, forKey: "multipleChoice")
         UserDefaults.standard.set(multipleChoiceConversation, forKey: "multipleChoiceConversation")
-    }
-    
-    @IBAction func next(_ sender: Any) {
-        
     }
     
     @IBAction func skip(_ sender: UIButton) {

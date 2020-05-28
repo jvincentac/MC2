@@ -10,12 +10,11 @@ import Foundation
 import CoreData
 
 extension User {
-    static func saveUserData(viewContext: NSManagedObjectContext, userName: String, avatar: String, exp: Int16, coin: Int16) -> User? {
+    static func saveUserData(viewContext: NSManagedObjectContext, userName: String, avatar: String, coin: Int16) -> User? {
         let user = User(context: viewContext)
         user.userName = userName
         user.avatar = avatar
         user.coin = coin
-        user.exp = exp
         do{
             try viewContext.save()
             return user
@@ -46,17 +45,31 @@ extension User {
             
         }
     }
+//    static func updateUserExp(viewContext: NSManagedObjectContext, exp: Int16){
+//        let user = fetchAll(viewContext: viewContext)
+//        let update = user[0]
+//        let oldExp = update.exp
+//
+//        print(oldExp)
+//        print(exp)
+//        print(exp + oldExp)
+//
+//        update.setValue(exp + oldExp, forKey: "exp")
+//
+//        do{
+//            try viewContext.save()
+//        }
+//        catch {
+//
+//        }
+//    }
     
-    static func updateUserExp(viewContext: NSManagedObjectContext, exp: Int16){
+    static func updateUserCoin(viewContext: NSManagedObjectContext, coin: Int16){
         let user = fetchAll(viewContext: viewContext)
         let update = user[0]
-        let oldExp = update.exp
+        let oldCoin = update.coin
         
-        print(oldExp)
-        print(exp)
-        print(exp + oldExp)
-        
-        update.setValue(exp + oldExp, forKey: "exp")
+        update.setValue(coin + oldCoin, forKey: "coin")
         
         do{
             try viewContext.save()
@@ -66,16 +79,11 @@ extension User {
         }
     }
     
-    static func updateUserCoin(viewContext: NSManagedObjectContext, coin: Int16){
+    static func updateUserAvatar(viewContext: NSManagedObjectContext, avatar: String){
         let user = fetchAll(viewContext: viewContext)
         let update = user[0]
-        let oldCoin = update.coin
         
-        print(oldCoin)
-        print(coin)
-        print(coin + oldCoin)
-        
-        update.setValue(coin + oldCoin, forKey: "coin")
+        update.setValue(avatar, forKey: "avatar")
         
         do{
             try viewContext.save()

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bji-Hv-a1k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bji-Hv-a1k">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -10,7 +10,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="bvp-zm-E4L">
             <objects>
-                <viewController storyboardIdentifier="onboarding_1" id="TUI-al-CpH" customClass="onboardingViewController" customModule="MC2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboarding_1" id="TUI-al-CpH" customClass="onboardingViewController" customModule="UpSkill" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fm8-aX-NIn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,23 +123,6 @@ a presentation, write reports and conduct
                                         <nil key="highlightedColor"/>
                                         <string key="userLabel">Based on our research among entry-levels, it was likely to indicate that  fresh graduates should be able to make  a presentation, write reports and conduct  meetings all in English at work field.</string>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SYe-an-Mbw">
-                                        <rect key="frame" x="341" y="372" width="36" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Next">
-                                                    <attributes>
-                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <font key="NSFont" size="17" name="SFProDisplay-Regular"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <connections>
-                                            <action selector="next:" destination="TUI-al-CpH" eventType="touchUpInside" id="yYG-PV-Z8b"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -159,7 +142,7 @@ a presentation, write reports and conduct
         <!--Onboarding View Controller-->
         <scene sceneID="IkS-Le-W2M">
             <objects>
-                <viewController storyboardIdentifier="onboarding_2" id="BSz-u9-tuL" customClass="onboardingViewController" customModule="MC2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboarding_2" id="BSz-u9-tuL" customClass="onboardingViewController" customModule="UpSkill" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xw8-o0-Uqi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,23 +168,6 @@ a presentation, write reports and conduct
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="INS-ma-WmB">
-                                        <rect key="frame" x="341" y="372" width="36" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Next">
-                                                    <attributes>
-                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <font key="NSFont" size="17" name="SFProDisplay-Regular"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <connections>
-                                            <action selector="next:" destination="TUI-al-CpH" eventType="touchUpInside" id="4xD-hX-FzO"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42M-Jd-kJj">
                                         <rect key="frame" x="48" y="119" width="319" height="69"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -260,7 +226,7 @@ a presentation, write reports and conduct
         <!--Onboarding View Controller-->
         <scene sceneID="yxL-Ud-UBt">
             <objects>
-                <viewController storyboardIdentifier="onboarding_3" id="SwC-lj-MEb" customClass="onboardingViewController" customModule="MC2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboarding_3" id="SwC-lj-MEb" customClass="onboardingViewController" customModule="UpSkill" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LJe-Og-sbJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -354,7 +320,7 @@ Daily Challenges on Your Way To The Top</string>
         <!--Page View Controller-->
         <scene sceneID="fJl-Dm-Pph">
             <objects>
-                <pageViewController storyboardIdentifier="PVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="bji-Hv-a1k" customClass="pageViewController" customModule="MC2" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="bji-Hv-a1k" customClass="pageViewController" customModule="UpSkill" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nRR-w8-hSQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-519" y="-408"/>

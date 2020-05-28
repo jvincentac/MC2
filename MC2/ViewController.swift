@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if let visited = UserDefaults.standard.object(forKey: "visited") {
-            let sb = UIStoryboard(name: "Quiz", bundle: nil).instantiateViewController(withIdentifier: "multipleChoice") as! multipleChoiceViewController
+            let sb = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "Discover") as! DiscoverStoriesViewController
             sb.modalPresentationStyle = .fullScreen
             present(sb, animated: true, completion: nil)
         }

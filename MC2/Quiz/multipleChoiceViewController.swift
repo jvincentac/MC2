@@ -28,8 +28,8 @@ class multipleChoiceViewController: UIViewController {
     var correctAnswer = String()
     var multipleChoice : [String] = []
     
-    var story = 1
-    var stage = 3
+    var story = 0
+    var stage = 0
     var success = 0
     
     let allMultipleChoice = UserDefaults.standard.dictionary(forKey: "multipleChoice") as! [String : [String]]

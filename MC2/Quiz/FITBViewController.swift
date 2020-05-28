@@ -84,6 +84,7 @@ class FITBViewController: UIViewController {
         checkChatBubble.isHidden = true
         checkBtn.isHidden = true
         checkBtn.isEnabled = false
+        checkBtn.titleLabel?.textAlignment = .center
     }
     
     func configureBtn(story: Int, stage: Int) {
@@ -130,6 +131,7 @@ class FITBViewController: UIViewController {
     
     @objc func moveBtn(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: self.view)
+        
         if gesture.state == .changed {
             selectedButton.transform = CGAffineTransform(translationX: translation.x, y: translation.y)
             selectedQuestionBorder(point: selectedButton.frame.origin.y)

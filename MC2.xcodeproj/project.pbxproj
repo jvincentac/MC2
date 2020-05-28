@@ -11,6 +11,11 @@
 		9D234E7324694C8700F255D4 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D234E7224694C8700F255D4 /* Quiz.storyboard */; };
 		9D234E75246A87C400F255D4 /* multipleChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D234E74246A87C400F255D4 /* multipleChoiceViewController.swift */; };
 		9D491486246A8D4300611641 /* TrueFalseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D491485246A8D4300611641 /* TrueFalseViewController.swift */; };
+		9D9DAA782478DC0E00B5EBE5 /* First.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D9DAA772478DC0E00B5EBE5 /* First.storyboard */; };
+		9D9DAA7A2478DEFE00B5EBE5 /* DiscoverStoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9DAA792478DEFE00B5EBE5 /* DiscoverStoriesViewController.swift */; };
+		9D9DAA7C2478E03D00B5EBE5 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9DAA7B2478E03D00B5EBE5 /* ChallengeViewController.swift */; };
+		9D9DAA7F2478EE9800B5EBE5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D9DAA7E2478EE9800B5EBE5 /* Profile.storyboard */; };
+		9D9DAA812478EEB700B5EBE5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9DAA802478EEB700B5EBE5 /* ProfileViewController.swift */; };
 		9DA804AA246839170067AD06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA804A9246839170067AD06 /* AppDelegate.swift */; };
 		9DA804AC246839170067AD06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA804AB246839170067AD06 /* SceneDelegate.swift */; };
 		9DA804AE246839170067AD06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA804AD246839170067AD06 /* ViewController.swift */; };
@@ -36,6 +41,11 @@
 		9D234E7224694C8700F255D4 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
 		9D234E74246A87C400F255D4 /* multipleChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = multipleChoiceViewController.swift; sourceTree = "<group>"; };
 		9D491485246A8D4300611641 /* TrueFalseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueFalseViewController.swift; sourceTree = "<group>"; };
+		9D9DAA772478DC0E00B5EBE5 /* First.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = First.storyboard; sourceTree = "<group>"; };
+		9D9DAA792478DEFE00B5EBE5 /* DiscoverStoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverStoriesViewController.swift; sourceTree = "<group>"; };
+		9D9DAA7B2478E03D00B5EBE5 /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
+		9D9DAA7E2478EE9800B5EBE5 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		9D9DAA802478EEB700B5EBE5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9DA804A6246839170067AD06 /* UpSkill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpSkill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA804A9246839170067AD06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DA804AB246839170067AD06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +90,25 @@
 			path = Quiz;
 			sourceTree = "<group>";
 		};
+		9D9DAA762478DBEE00B5EBE5 /* Discover + Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				9D9DAA772478DC0E00B5EBE5 /* First.storyboard */,
+				9D9DAA7B2478E03D00B5EBE5 /* ChallengeViewController.swift */,
+				9D9DAA792478DEFE00B5EBE5 /* DiscoverStoriesViewController.swift */,
+			);
+			path = "Discover + Challenge";
+			sourceTree = "<group>";
+		};
+		9D9DAA7D2478EE6D00B5EBE5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				9D9DAA7E2478EE9800B5EBE5 /* Profile.storyboard */,
+				9D9DAA802478EEB700B5EBE5 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		9DA8049D246839170067AD06 = {
 			isa = PBXGroup;
 			children = (
@@ -108,9 +137,11 @@
 				9DF57C0C246BF89A00B4208E /* UserRegis */,
 				9D234E7124694C6F00F255D4 /* Quiz */,
 				9DA804C4246839660067AD06 /* Onboarding */,
-				9DA804B5246839190067AD06 /* Assets.xcassets */,
+				9D9DAA7D2478EE6D00B5EBE5 /* Profile */,
+				9D9DAA762478DBEE00B5EBE5 /* Discover + Challenge */,
 				9DF080F72474D54C00F3A66E /* CoreDataFile */,
 				9DA804B7246839190067AD06 /* LaunchScreen.storyboard */,
+				9DA804B5246839190067AD06 /* Assets.xcassets */,
 				9DA804BA246839190067AD06 /* Info.plist */,
 				9DA804B2246839170067AD06 /* MC2.xcdatamodeld */,
 			);
@@ -223,9 +254,11 @@
 			files = (
 				9DA804B9246839190067AD06 /* LaunchScreen.storyboard in Resources */,
 				9DF080FD2474D9C700F3A66E /* coreDataTest.storyboard in Resources */,
+				9D9DAA7F2478EE9800B5EBE5 /* Profile.storyboard in Resources */,
 				9DA804B6246839190067AD06 /* Assets.xcassets in Resources */,
 				9DF080F42473FB9000F3A66E /* Completion.storyboard in Resources */,
 				9DA804B1246839170067AD06 /* Main.storyboard in Resources */,
+				9D9DAA782478DC0E00B5EBE5 /* First.storyboard in Resources */,
 				9DA804C1246839300067AD06 /* Onboarding.storyboard in Resources */,
 				9DF57C0E246BF8B300B4208E /* UserRegis.storyboard in Resources */,
 				9D234E7324694C8700F255D4 /* Quiz.storyboard in Resources */,
@@ -244,10 +277,13 @@
 				9D234E75246A87C400F255D4 /* multipleChoiceViewController.swift in Sources */,
 				9DF080F62473FBDD00F3A66E /* completionViewController.swift in Sources */,
 				9D491486246A8D4300611641 /* TrueFalseViewController.swift in Sources */,
+				9D9DAA7A2478DEFE00B5EBE5 /* DiscoverStoriesViewController.swift in Sources */,
 				9DA804AA246839170067AD06 /* AppDelegate.swift in Sources */,
+				9D9DAA812478EEB700B5EBE5 /* ProfileViewController.swift in Sources */,
 				9DA804B4246839170067AD06 /* MC2.xcdatamodeld in Sources */,
 				9DF080FB2474D63A00F3A66E /* User+Extension.swift in Sources */,
 				9DF57C10246BF94500B4208E /* UserRegisViewController.swift in Sources */,
+				9D9DAA7C2478E03D00B5EBE5 /* ChallengeViewController.swift in Sources */,
 				9DA804AC246839170067AD06 /* SceneDelegate.swift in Sources */,
 				9DF080FF2474D9D800F3A66E /* UserCoreDataViewController.swift in Sources */,
 				9DF57C3B246D3B9600B4208E /* FITBViewController.swift in Sources */,

@@ -20,8 +20,8 @@ class TrueFalseViewController: UIViewController {
     var trueFalse : [String] = []
     
     var success = UserDefaults.standard.object(forKey: "success") as! Int
-    var story = 1
-    var stage = 1
+    var story = 0
+    var stage = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,6 +97,8 @@ class TrueFalseViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             let sb = UIStoryboard(name: "Completion", bundle: nil).instantiateViewController(withIdentifier: "completion") as! completionViewController
             sb.modalPresentationStyle = .fullScreen
+            sb.story = self.story
+            sb.stage = self.stage
             self.present(sb, animated: true, completion: nil)
         }
     }

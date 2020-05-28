@@ -26,10 +26,7 @@ class UserCoreDataViewController: UIViewController {
         
         userNameLabel.text = UserCoreDataViewController.user.last!.userName
         userAvatar.image = UIImage(named: UserCoreDataViewController.user.last!.avatar!)
-        exp.text = String(UserCoreDataViewController.user.last!.exp)
         coin.text = String(UserCoreDataViewController.user.last!.coin)
-        
-        fontTest.font = UIFont.systemFont(ofSize: 17, weight: .heavy)
     }
     
 //    @IBAction func saveToCoreData(_ sender: UIButton) {
